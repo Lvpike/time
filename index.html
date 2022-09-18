@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="simple">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>休息循环闹钟</title>
+    <script src="../time/time.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="flex-y">
+      <p id="p1">休息循环闹钟</p>
+      <div class="flex">
+        <p>倒计时:</p>
+        <p
+          style="
+            margin: 2px;
+            border: 1px solid rgb(0, 0, 0);
+            padding: 1px;
+            width: 50px;
+            text-align: center;
+          "
+          id="p2"
+        >
+          时间
+        </p>
+      </div>
+      <div class="flex">
+        <button
+          id="button1"
+          value="true"
+          onclick="timeToRest()"
+          style="margin: 5px"
+        >
+          开始提醒休息
+        </button>
+        <button
+          id="button2"
+          value="true"
+          onclick="timeToStop()"
+          style="margin: 5px"
+        >
+          停止提醒
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
