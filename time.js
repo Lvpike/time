@@ -1,6 +1,7 @@
 var i = 0;
 var k = 0;
-var j = 2; //循环闹钟时间，单位分钟
+var j = 30; //休息完毕的时间，单位分钟
+var g = 25; //该休息了的时间，单位分钟
 var time1;
 const music = new Audio("Ring07.wav");
 function timeToRest() {
@@ -16,12 +17,12 @@ function timeToRest() {
   time1 = setTimeout(() => {
     if (k < j) {
       i++;
-      console.log(i);
+      // console.log(i);
       if (i === 60) {
         i = 0;
         k = k + 1;
       }
-      console.log(k);
+      // console.log(k);
       document.getElementById("p2").innerHTML = k + ":" + i;
       timeToRest();
     } else {
@@ -29,6 +30,9 @@ function timeToRest() {
       k = 0;
       music.play();
       timeToRest();
+    }
+    if (k === g && i === 0) {
+      music.play();
     }
   }, 1000);
   // setTimeout(() => {
