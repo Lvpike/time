@@ -35,12 +35,25 @@ function timeToRest() {
       music.play();
     }
   }, 1000);
+
   // setTimeout(() => {
   //   music.play();
   //   alert("注意休息，现在开始休息十分钟");
   //   console.log(i);
   //   timeToRest();
   // }, j);
+  var worker = new Worker("worker.js");
+  worker.postMessage("hello, world"); // 发送
+  worker.postMessage({ method: "echo", args: ["Work"] });
+  worker.onmessage = function (event) {
+    console.log("Received message " + event.data);
+    doSomething();
+  };
+  worker.terminate();
+}
+function doSomething() {
+  // 执行任务
+  worker.postMessage("Work done!");
 }
 function timeToStop() {
   document.getElementById("button1").disabled = false;
