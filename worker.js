@@ -4,7 +4,6 @@ var j = 30; //休息完毕的时间，单位分钟
 var g = 1; //该休息了的时间，单位分钟
 var time1;
 var message = [];
-const music = new Audio("Ring07.wav");
 // self.addEventListener(
 //   "message",
 //   function (e) {
